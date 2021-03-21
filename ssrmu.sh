@@ -879,20 +879,24 @@ Download_SSR(){
 }
 Service_SSR(){
 	if [[ ${release} = "centos" ]]; then
-#whwset if ! wget --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/service/ssrmu_centos -O /etc/init.d/ssrmu; then
 #whwset
-		rm -rf ssrmu_debian && mv "ssrmu_centos" "/etc/init.d/ssrmu"; then
-			echo -e "${Error} ShadowsocksR服务 管理脚本下载失败 !" && exit 1
-		fi
+		rm -rf ssrmu_debian
+#whwset
+		mv "ssrmu_centos" "/etc/init.d/ssrmu"; then
+#whwset if ! wget --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/service/ssrmu_centos -O /etc/init.d/ssrmu; then
+#whwset echo -e "${Error} ShadowsocksR服务 管理脚本下载失败 !" && exit 1
+#whwset fi
 		chmod +x /etc/init.d/ssrmu
 		chkconfig --add ssrmu
 		chkconfig ssrmu on
 	else
-#whwset if ! wget --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/service/ssrmu_debian -O /etc/init.d/ssrmu; then
 #whwset
-		rm -rf ssrmu_centos && mv "ssrmu_debian" "/etc/init.d/ssrmu"; then
-			echo -e "${Error} ShadowsocksR服务 管理脚本下载失败 !" && exit 1
-		fi
+		rm -rf ssrmu_centos
+#whwset		
+		mv "ssrmu_debian" "/etc/init.d/ssrmu"
+#whwset if ! wget --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/service/ssrmu_debian -O /etc/init.d/ssrmu; then
+#whwset	echo -e "${Error} ShadowsocksR服务 管理脚本下载失败 !" && exit 1
+#whwset fi
 		chmod +x /etc/init.d/ssrmu
 		update-rc.d -f ssrmu defaults
 	fi

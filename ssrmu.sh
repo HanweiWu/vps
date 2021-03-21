@@ -882,7 +882,7 @@ Service_SSR(){
 #whwset
 		rm -rf ssrmu_debian
 #whwset
-		mv "ssrmu_centos" "/etc/init.d/ssrmu"; then
+		mv "ssrmu_centos" "/etc/init.d/ssrmu"
 #whwset if ! wget --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/service/ssrmu_centos -O /etc/init.d/ssrmu; then
 #whwset echo -e "${Error} ShadowsocksR服务 管理脚本下载失败 !" && exit 1
 #whwset fi
